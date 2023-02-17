@@ -1,9 +1,13 @@
 # Issue
 신규개발이 거의 없던 회사내 레거시 프로젝트 신규 모듈 개발요청이 들어왔다. 개발 후 빌드 > 배포 하려 했으나 에러 발생
 
+<br>
+
 # Problem
 + 소스코드 내 배포 프로세스 확인해봤더니 AWS EB(Elastic Beanstalk) 사용
 + package.json에 작성된대로 yarn deploy:dev 돌려봤으나 실패
+
+<br>
 
 # Solution
 1. 백엔드개발자에게 해당 프로젝트 AWS IAM 계정을 받음
@@ -16,6 +20,8 @@
 8. node 환경을 16버전으로 재구성
 9. 그에맞게 package도 12 > 16으로 migration
 10. eb init > eb create > eb deploy 순서로 배포 성공
+
+<br>
 
 # What I Learn
 + AWS EB 명령어, 사용법, 배포 프로세스에 대한 개념 및 실무 경험
