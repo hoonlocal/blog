@@ -1,15 +1,15 @@
-# Issue
+## Issue
 신규개발이 거의 없던 회사 레거시 프로젝트(maimovie)에 연합뉴스 연동 모듈 개발요청이 들어왔다. 개발 후 빌드, 배포 하려 했으나 에러 발생
 
 <br>
 
-# Problem
+## Problem
 + 소스코드 내 배포 프로세스 확인해봤더니 AWS EB(Elastic Beanstalk) 사용
 + package.json에 작성된대로 yarn deploy:dev 돌려봤으나 실패
 
 <br>
 
-# Solution
+## Solution
 1. 백엔드개발자에게 해당 프로젝트 AWS IAM 계정을 받음
 2. EB에 들어가서 애플리케이션 환경 파악(dev, patch, prod 서버로 구성되어 있었음)
 3. node12 버전으로 환경세팅이 되어있음(해당 프로젝트는 14로 구성)
@@ -23,7 +23,7 @@
 
 <br>
 
-# What I Learn
+## What I Learn
 + AWS EB 명령어, 사용법, 배포 프로세스에 대한 개념 및 실무 경험
 + dev, patch, prod로 서버를 나누는 이유에 대해 파악
 + 새 버전을 별도의 환경에 배포한 후, 두 환경의 CNAME을 바꿔 트래픽을 새 버전으로 즉시 리디렉션하는 블루/그린 무중단 배포에 대해 알게 됨
