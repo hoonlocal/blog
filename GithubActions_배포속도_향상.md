@@ -16,11 +16,10 @@
           service: ${{ env.ECS_SERVICE }}
           cluster: ${{ env.ECS_CLUSTER }}
           wait-for-service-stability: false. # <--- default is true
-```
-```
-무중단 배포할때
-+ ecs 드레인하고 종료되는 것까지 기다린다: true
-+ ecs 드레인을 기다리지 않는다: false
+          
+# 무중단 배포할때
+# ecs 드레인하고 종료되는 것까지 기다린다: true
+# ecs 드레인을 기다리지 않는다: false
 ```
 3. 테스트 해보니 이 프로젝트의 경우 **30~40%**(17분 -> 6분) 가량 **시간 단축**
 
