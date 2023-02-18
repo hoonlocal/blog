@@ -2,7 +2,7 @@
 디자인 디테일을 자주 확인해야 할 때 빠른 테스트를 위해 수시로 개발서버에 배포하기도 한다. 그럴때마다 시간이 오래걸려 불편했던 점이 있어 배포시간을 단축할 방법을 알아보았다.
 
 ## Problem
-+ 해당 프로젝트(staypia admin)는 Github Actions를 사용
++ 해당 프로젝트(staypia admin)는 Github Actions을 사용
 + 워크플로우를 통해 ECS로 배포
 
 ## Solution
