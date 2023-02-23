@@ -1,5 +1,5 @@
 ## Issue
-프로젝트 중 특정 페이지 링크 공유 시 사이트정보가 없어 title, description, image를 추가해달라는 요청이 왔다.
+프로젝트 중 특정 페이지 링크 공유 시 사이트 정보가 없어 title, description, image를 추가해달라는 요청이 왔다.
 
 <br>
 
