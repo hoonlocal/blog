@@ -6,5 +6,6 @@
 
 <br>
 
++ [meta태그 ogimage 적용하기](https://github.com/hoonlocal/TIL/blob/main/trouble-shooting/meta%ED%83%9C%EA%B7%B8_ogimage_%EC%A0%81%EC%9A%A9%ED%95%98%EA%B8%B0.md)
 + [Github Actions 배포시간 단축](https://github.com/hoonlocal/TIL/blob/main/trouble-shooting/GithubActions_%EB%B0%B0%ED%8F%AC%EC%8B%9C%EA%B0%84_%EB%8B%A8%EC%B6%95.md)
 + [AWS EB로 배포하기](https://github.com/hoonlocal/TIL/blob/main/trouble-shooting/AWS_EB%EB%A1%9C_%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0.md)
