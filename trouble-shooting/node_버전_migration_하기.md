@@ -1,5 +1,5 @@
 ## Issue
-이번에 AWS EB 서버를 새로 구축하면서 노드환경 버전을 16으로 구축하였다. 기존 코드로 배포를 시도하였으나 실패하였다.
+이번에 마이무비(EN) 프로젝트 AWS EB 서버를 새로 구축하면서 노드환경 버전을 16으로 구축하였다. 기존 코드로 배포를 시도하였으나 실패하였다.
 
 <br>
 
@@ -40,7 +40,7 @@ peerOptional node-sass@"^4.0.0" from sass-loader@8.0.2
 this command with --force, or --legacy-peer-deps
 ```
 5. 구글링하여 방법을 찾아봤지만 `sass-loader`와 `webpack`, `webpack`과 `vue` 등을 **다운그레이드**를 통해 호환시켜야 한다고 함
-6. 정해진 일정이 있는데 위 방법으로 시도하다간 일정을 못맞출 것 같아 일단 `node-sass`를 안쓰기로 함
+6. 정해진 일정이 있는데 위 방법으로 시도하다간 일정을 못맞출 것 같아 일단 `node-sass`를 안쓰기로 결정
 7. `node-sass` 삭제하고 `sass` 설치
 8. `node-sass` 사용하지 않으면서 나는 코드 에러 **/deep/** > **::v-deep**으로 변경
 9. 추가로 margin-top: **200/30 * 10** 형식 > margin-top: **calc(200 / 300) * 10** 식으로 일괄 변경
