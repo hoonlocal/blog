@@ -30,7 +30,7 @@ Node <8 | <5.0                        | <57
 3. **npm7** 이전에는 **peer dependency** 관련 오류가 있으면 경고만 하고 설치는 됐었는데 이후 부터는 **에러**가 발생하면서 설치가 되지 않는다고 함
 4. 무시하고 설치해봤지만 역시나 오류
 
-```bash
+```
 // 의존성 오류 
 Could not resolve dependency:
 peerOptional node-sass@"^4.0.0" from sass-loader@8.0.2
