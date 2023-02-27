@@ -50,5 +50,5 @@ this command with --force, or --legacy-peer-deps
 
 ## What I Learn
 + node-sass와 sass-loader에 대한 개념 및 옵션들에 대해 부가적으로 학습
-+ 다음에 migration 하게되면 sass-loader와 webpack의 버전을 맞추는 식으로도 해결할 수 있을 것 같음
++ 다음에 migration 하게 되면 sass-loader와 webpack의 버전을 맞추는 식으로도 해결할 수 있을 것 같음
 + 이 외에 자잘한 경고 ex) vuex package 모듈 ./ > ./* 등 해결
