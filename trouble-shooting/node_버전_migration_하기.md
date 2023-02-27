@@ -39,12 +39,12 @@ peerOptional node-sass@"^4.0.0" from sass-loader@8.0.2
 // 강제로 설치, 또는 의존성 무시하고 설치 위 명령어 뒤에 붙여주면 된다.
 this command with --force, or --legacy-peer-deps
 ```
-5. 구글링하여 방법을 찾아봤지만 `sass-loader`와 `webpack`, `webpack`과 `vue` 등 **다운그레이션**을 통해 호환시켜야 하는 것 같음
-6. 작업할게 산더미인데 위 방법으로 하다가 시간을 많이 잡아먹을 것 같아 `node-sass`를 안쓰기로 함
+5. 구글링하여 방법을 찾아봤지만 `sass-loader`와 `webpack`, `webpack`과 `vue` 등을 **다운그레이드**를 통해 호환시켜야 한다고 함
+6. 정해진 일정이 있는데 위 방법으로 시도하다간 일정을 못맞출 것 같아 일단 `node-sass`를 안쓰기로 함
 7. `node-sass` 삭제하고 `sass` 설치
 8. `node-sass` 사용하지 않으면서 나는 코드 에러 **/deep/** > **::v-deep**으로 변경
 9. 추가로 margin-top: **200/30 * 10** 형식 > margin-top: **calc(200 / 300) * 10** 식으로 일괄 변경
-10. 마지막으로 **모듈 패키지** 재설치하고 **yarn cache clean**하여 캐시 지우고 나니 배포 성공
+10. 마지막으로 **모듈 패키지** 재설치하고 **yarn cache clean**하여 캐시 지우고 배포 > 성공
 
 <br>
 
