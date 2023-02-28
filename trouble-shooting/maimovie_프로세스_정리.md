@@ -102,6 +102,7 @@ isDev = false // prod
   - 이후 yarn build
   - build 완료 후 node_modules 삭제
   - EFS 연결하며 만들었던 maimovie-efs 폴더도 삭제
+  - 압축하기 전 프로젝트 폴더 내에서 숨김파일 보기 설정
   - 프로젝트의 최상위 폴더(maimovie)를 제외한 안의 내용물만 드래그해서 압축
   - 압축한 파일은 EB에 직접 업로드 함(개발서버는 maimovie-release-env, 서비스서버는 maimovie-prod-env)
   - 혹시 배포가 안되면 https://asecurity.dev/entry/Mac-Zip-%ED%8C%8C%EC%9D%BC%EC%97%90%EC%84%9C-MACOSX-DSStore-%EC%A0%9C%EA%B1%B0 참고
