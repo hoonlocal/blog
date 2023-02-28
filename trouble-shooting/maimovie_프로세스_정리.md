@@ -22,7 +22,32 @@ maimovie 프로젝트를 혼자 하고 있는데 기존에 되어있던 환경, 
 <br>
 
 ## Solution
-1. **nvm**으로 노드버전 변경 후 install > 실패
+### 마이무비 영문
+#### 정보
++ 개발환경 : Nuxt.js(vue)
++ 배포타입 : EB(maimovie-release-env, maimovie-prod-env)
++ 레포지토리 : maimovie
++ 개발서버 : https://release.maimovie.com
++ 실서버 : https://maimovie.com
+#### 배포
+
+### 마이무비 국문 - main, notice, provacy, terms
+#### 정보
++ 개발환경 : Next.js(react)
++ 배포타입 : ECS(배포자동화)
++ 레포지토리 : maimovie-monorepo(apps/maimovie_kr)
++ 개발서버 : https://release.ko.maimovie.com
++ 실서버 : https://ko.maimovie.com
+#### 배포
+
+### 마이무비 국문 - 나머지(프로필 정보가 있는 페이지들)
+#### 정보
++ 개발환경 : Nuxt.js(vue)
++ 배포타입 : ECS(배포자동화)
++ 레포지토리 : maimovie-ko
++ 개발서버 : https://release.ko.maimovie.com/movie/20094415
++ 실서버 : https://ko.maimovie.com/movie/20094415
+#### 배포
 
 <br>
 
