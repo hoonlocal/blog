@@ -105,6 +105,25 @@ isDev = false // prod
   - 프로젝트의 최상위 폴더(maimovie)를 제외한 안의 내용물만 드래그해서 압축
   - 압축한 파일은 EB에 직접 업로드 함(개발서버는 maimovie-release-env, 서비스서버는 maimovie-prod-env)
   - 혹시 배포가 안되면 https://asecurity.dev/entry/Mac-Zip-%ED%8C%8C%EC%9D%BC%EC%97%90%EC%84%9C-MACOSX-DSStore-%EC%A0%9C%EA%B1%B0 참고
++ 기존 EB에 배포된 서비스가 갑자기 동작하지 않는 경우
+  - 로그 확인해보면 npm install 시에 git:// 프로토콜 오류로 배포가 정상적으로 되지 않을때 해결방법
+  - package-lock.json 파일을 생성하고 git:// -> https:// 로 수정해서 배포하면 됨
+```
+1. elastic beanstalk에서 현재 실행되고 있는 버전의 압축파일 다운로드 및 압축풀기 (환경을 선택하고 좌측 애플리케이션 버전 클릭)
+
+2. yarn.lock package-lock.json 간 변환 프로그램 설치
+> yarn global add synp
+
+3. package-lock.json 파일 생성
+> yarn
+> synp --source-file yarn.lock
+
+4. package-lock.json 파일 수정
+에디터로 package-lock.json 파일을 열어서 git:// -> https:// 로 수정한다.
+
+5. 배포
+build 이후에 압축하여 배포 (.nuxt 폴더 등 히든파일 및 폴더 확인)
+```
 
 ### 마이무비 국문 - main, notice, provacy, terms
 + 개발환경 : Next.js(react)
