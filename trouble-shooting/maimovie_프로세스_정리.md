@@ -47,12 +47,9 @@ EFS는 Profile(/movie, /people) 페이지에서 사용된다.
 ```
 // 예시
 -----BEGIN RSA PRIVATE KEY-----
-DFBDFbdkfnbkdbdDFBdkn5gn43kn4gker4654645klfndlflknhfgfgGGFGflkdn
 jfljbDFGDFGDFGDTT65654645645EDB654654/dfbDBGTYYf5635665456dfdFgg
 DFBDFbdkfnbkdbdDFBdkn5gn43kn4gker4654645klfndlflknhfgfgGGFGflkdn
-jfljbDFGDFGDFGDTT65654645645EDB654654/dfbDBGTYYf5635665456dfdFgg
-DFBDFbdkfnbkdbdDFBdkn5gn43kn4gker4654645klfndlflknhfgfgGGFGflkdn
-jfljbDFGDFGDFGDTT65654645645EDB654654/dfbDBGTYYf5635665456dfdFgg
+4580457dkrvnSVr454SVrgr45fljlvnnDVRGDfddFDfDFsdfgfg4534sdv4s5zp0
 -----END RSA PRIVATE KEY-----
 ```
 4. **먼저 위 펨키는 내비두고 터미널에서 ~/.ssh/config 파일에 들어가서 아래와 같이 작성 후 저장**
