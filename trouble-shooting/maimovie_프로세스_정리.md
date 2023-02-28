@@ -18,7 +18,7 @@ maimovie 프로젝트를 혼자 하고 있는데 기존에 되어있던 환경, 
 + 영문버전과 국문버전에서 사용하는 **데이터구조** 및 **값**들이 다르기 때문에 호환안됨
   - ex) "더글로리"의 영문에서 **series**값은 20136283, 국문에서는 25001439
 + 영문버전은 로컬에서 데이터 확인하려면 **EFS**가 연결되어 있어야 함(연결 및 사용법은 아래 정리)
-+ Module Rendered 컴포넌트 방식 사용(데이터가 있어야 모튤 노출)
++ Module Rendered 컴포넌트 방식 사용(데이터가 있어야 모듈 노출)
 
 <br>
 
@@ -63,9 +63,10 @@ Host enmaimovieEFS
 ```
 5. 이 후 ~/.ssh에 maimovie-{아이디}-us-west-1-221221.pem 파일을 만들고 아까 발급받은 펨키를 넣고 저장
 6. 여기까지 했으면 EFS를 연결하기 위한 펨키 환경설정은 완료되었고, EFS를 불러올 때 마운트, 해제할 때 언마운트 해야 함
-7. 마운트
+7. 프로젝트에서 jsonFileReader.js 파일의 path.resolve('..maimovie-efs')와 맞는 경로에 maimovie-efs 폴더 생성
+8. 마운트
 ```
-sshfs hyanghoon@52.53.155.131:/mnt/maimovie-efs-mount/ {로컬경로} -o IdentityFile=~/.ssh/{pemkey}
+sshfs {아이디}@52.53.155.131:/mnt/maimovie-efs-mount/ {로컬경로} -o IdentityFile=~/.ssh/{pemkey}
 ```
 ```
 // 예시
@@ -73,9 +74,8 @@ sshfs hyanghoon@52.53.155.131:/mnt/maimovie-efs-mount/ "/Users/mycelebs/Desktop/
 ```
 8. 언마운트
 ```
-umount hyanghoon@52.53.155.131:/mnt/maimovie-efs-mount/
+umount {아이디}@52.53.155.131:/mnt/maimovie-efs-mount/
 ```
-9. 마운트 로컬경로는 프로젝트에서 jsonFileReader.js 파일의 path.resolve('../maimovie/maimovie-efs')와 맞아야 함
 #### env
 개발, 서비스 API 수정할 때
 1. .env 파일
@@ -88,6 +88,23 @@ DEV_API=false // prod
 isDev = true // dev
 isDev = false // prod
 ```
+#### 배포
++ eb deploy 방식
+  - eb init으로 .elasticbeanstalk 초기화 설정
+  - eb create로 애플리케이션 환경 세팅
+  - eb deploy로 배포
+  - 아래와 같이 개발서버, 서비스서버 배포를 package.json에 설정해둠
+  - `"deploy:dev": "yarn build && eb deploy maimovie-release-env --region us-west-1 --profile maimovie",`
+  - `"deploy:prod": "yarn build && eb deploy maimovie-prod-env --region us-west-1 --profile maimovie",`
++ 직접 업로드 방식
+  - 위 방식이 안되면 아래 순서로 직접 업로드
+  - 배포 전 yarn install(node_modules 설치되어있으면 생략)
+  - 이후 yarn build
+  - build 완료 후 node_modules 삭제
+  - EFS 연결하며 만들었던 maimovie-efs 폴더도 삭제
+  - 프로젝트의 최상위 폴더(maimovie)를 제외한 안의 내용물만 드래그해서 압축
+  - 압축한 파일은 EB에 직접 업로드 함(개발서버는 maimovie-release-env, 서비스서버는 maimovie-prod-env)
+  - 혹시 배포가 안되면 https://asecurity.dev/entry/Mac-Zip-%ED%8C%8C%EC%9D%BC%EC%97%90%EC%84%9C-MACOSX-DSStore-%EC%A0%9C%EA%B1%B0 참고
 
 ### 마이무비 국문 - main, notice, provacy, terms
 + 개발환경 : Next.js(react)
@@ -104,8 +121,8 @@ isDev = false // prod
 + 배포타입 : ECS(배포자동화)
 + 데이터 : API
 + 레포지토리 : maimovie-ko
-+ 개발서버 : https://release.ko.maimovie.com/movie/20094415
-+ 서비스서버 : https://ko.maimovie.com/movie/20094415
++ 개발서버 : https://release.ko.maimovie.com/movie/20094415 ("정이" 프로필 예시)
++ 서비스서버 : https://ko.maimovie.com/movie/20094415 ("정이" 프로필 예시)
 + dev 배포 : develop 브랜치에 push시 dev 배포
 + service 배포 : main 브랜치에 push 후 release note 작성 시 배포
 
