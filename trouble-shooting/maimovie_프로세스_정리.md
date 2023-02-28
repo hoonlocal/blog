@@ -33,10 +33,49 @@ maimovie 프로젝트를 혼자 하고 있는데 기존에 되어있던 환경, 
 + dev 배포 : `yarn deploy:dev` 또는 직접 EB에 업로드
 + service 배포 : `yarn deploy:prod` 또는 직접 EB에 업로드
 #### EFS
-영문버전을 로컬에서 띄었을때 데이터가 제대로 나오지 않는다. AWS EFS를 로컬에 직접 연결시켜야 데이터를 불러올 수 있다. 로컬이 아닌 서버(개발, 서비스)에서는 백엔드개발자가 EB와 EFS를 연결시켜 두었으므로 별도로 다른 작업을 하지 않아도 데이터가 잘 나온다. 간단한 작업이라면 작업 후 개발서버에서 확인해도 되지만 보다 큰 작업이라면 로컬에서 확인하면서 작업해야하니 EFS를 연결하여 사용한다.
-1. EFS는 Profile(/movie, /people) 페이지에서 사용
-2. 로컬에서 EFS 사용하려면 macFuse 먼저 설치
-2. 로컬에서 EFS 사용하려면 macFuse 먼저 설치
+영문버전을 로컬에서 띄었을때 데이터가 제대로 나오지 않는다. AWS EFS를 로컬에 직접 연결시켜야 데이터를 불러올 수 있다. 로컬이 아닌 서버(개발, 서비스)에서는 백엔드 개발자가 EB와 EFS를 연결시켜 두었으므로 별도로 다른 작업을 하지 않아도 데이터가 잘 나온다. 간단한 작업이라면 작업 후 개발서버에서 확인해도 되지만 보다 큰 작업이라면 로컬에서 확인하면서 작업해야하니 EFS를 연결하여 사용한다. EFS는 Profile(/movie, /people) 페이지에서 사용된다.
+1. 로컬에서 EFS 사용하려면 macFuse와 sshfs 설치  
+   + `brew cask install osxfuse` or https://osxfuse.github.io
+   + `brew install sshfs` or https://macappstore.org/sshfs/
+2. 설치 후 관련 백엔드 개발자(현재 김진용님)에게 마이무비 영문버전 EFS 권한 요청
+3. 요청하면 아래와 같은 펨키를 받음
+```
+// 예시
+-----BEGIN RSA PRIVATE KEY-----
+HJapazI4+Mnrj1Q/2aEp9HrvfP73x/9Xrx0mKKP6I326D9BBRHen849JxZmOXRcX
+rYeb73VKrsMkpbCJxb0edi3jjXf54z6ZNx0ySrARdI1ZRBTQ2RSpK7W4lXNXd7h9
+1ZSkZgwWv/s+UwbtWz1/j3WtXd+F6Jj3jzUvD5rMYjIu4KyoKKIFSt1j2W6Mk+Ur
+ksL/+vHX08+/WwxU/pdDIUBsHrWIBz8KhftsMwZCpAN5SyA+oPCIVqlfYBVhbslJ
+7w4wv2ECgYEA8tJ+z3RpqFFC5BRaXIaVMg2EGdTDf+uORQpipDE2lR24DDLeTYdc
+jW+gPoFy+OCQalL098b0IhIhlj7mVW4UhakrjO1dMjmcYwTvqxFYSwxIoIaApyIt
+800JTTcjsd4fmvYbgSTmHkPlm0AzC0K6DfdJAYiXHgrsJ7AZkHqzbPMCgYEAk+nh
+9zFgtMYyZnIG3titN2C/GW08YfPqcRgTl4wMmvHiUdSBQLIdHQXmRfpFRHgqJIqW
+JkfYUb/JJ0wW/Ufy9ShWESroCsR8B7Mn4vAVGU3R/oFY9gzET+kAfJAjy9AcBU4E
+gKzFcYP0dFaw76O4FC6woqkeImLCFNjkLqKyW0kCgYBMS7dsl7dbG61Y3MxHpkHa
+-----END RSA PRIVATE KEY-----
+```
+4. 먼저 위 펨키는 내비두고 터미널에서 ~/.ssh/config 파일에 들어가서 아래와 같이 작성 후 저장
+```
+Host enmaimovieEFS
+  HostName 52.53.155.131
+  User {아이디}
+  IdentityFile ~/.ssh/maimovie-{아이디}-us-west-1-221221.pem
+```
+5. 이 후 ~/.ssh에 maimovie-{아이디}-us-west-1-221221.pem 파일을 만들고 아까 발급받은 펨키를 넣고 저장
+6. 여기까지 했으면 EFS를 연결하기 위한 펨키 환경설정은 완료되었고, EFS를 불러올 때 마운트, 해제할 때 언마운트 해야 함
+7. 마운트
+```
+sshfs hyanghoon@52.53.155.131:/mnt/maimovie-efs-mount/ {로컬경로} -o IdentityFile=~/.ssh/{pemkey}
+```
+```
+// 예시
+sshfs hyanghoon@52.53.155.131:/mnt/maimovie-efs-mount/ "/Users/mycelebs/Desktop/project/maimovie/maimovie-efs" -o IdentityFile=~/.ssh/maimovie-hyanghoon-us-west-1-221221.pem
+```
+8. 언마운트
+```
+umount hyanghoon@52.53.155.131:/mnt/maimovie-efs-mount/
+```
+9. 마운트 로컬경로는 프로젝트 소스에서 jsonFileReader.js파일의 path.resolve('../maimovie/maimovie-efs')와 맞아야 함
 
 ### 마이무비 국문 - main, notice, provacy, terms
 + 개발환경 : Next.js(react)
