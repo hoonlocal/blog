@@ -19,6 +19,7 @@ maimovie 프로젝트를 혼자 하고 있는데 기존에 되어있던 환경, 
   - ex) "더글로리"의 영문에서 **series**값은 20136283, 국문에서는 25001439
 + 영문버전은 로컬에서 데이터 확인하려면 **EFS**가 연결되어 있어야 함(연결 및 사용법은 아래 정리)
 + Module Rendered 컴포넌트 방식 사용(데이터가 있어야 모듈 노출)
++ 마이무비 국문(**Nuxt.js**) 소스코드를 **로컬**에서 띄우면 나오는 **첫페이지**는 **에러** 나는게 정상(메인페이지는 **Next.js** 페이지에 있으므로 여기선 **movie/20094415**와 같이 특정 프로필을 붙여 접속)
 
 <br>
 
@@ -109,7 +110,7 @@ isDev = false // prod
   - 압축하기 전 프로젝트 폴더 내에서 숨김파일 보기 설정
   - 프로젝트의 최상위 폴더(maimovie)를 제외한 안의 내용물만 드래그해서 압축
   - 압축한 파일은 EB에 직접 업로드 함(개발서버는 maimovie-release-env, 서비스서버는 maimovie-prod-env)
-  - 혹시 배포가 안되면 https://asecurity.dev/entry/Mac-Zip-%ED%8C%8C%EC%9D%BC%EC%97%90%EC%84%9C-MACOSX-DSStore-%EC%A0%9C%EA%B1%B0 참고
+  - 혹시 배포가 안되면 [Max - Zip 파일에서 __MACOSX 제거](https://asecurity.dev/entry/Mac-Zip-%ED%8C%8C%EC%9D%BC%EC%97%90%EC%84%9C-MACOSX-DSStore-%EC%A0%9C%EA%B1%B0) 참고
 + **기존 EB에 배포된 서비스가 갑자기 동작하지 않는 경우**
   - 로그 확인해보면 npm install 시에 git:// 프로토콜 오류로 배포가 정상적으로 되지 않을때 해결방법
   - package-lock.json 파일을 생성하고 git:// -> https:// 로 수정해서 배포하면 됨
