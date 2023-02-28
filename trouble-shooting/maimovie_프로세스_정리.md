@@ -33,7 +33,11 @@ maimovie 프로젝트를 혼자 하고 있는데 기존에 되어있던 환경, 
 + **dev 배포** : `yarn deploy:dev` 또는 직접 EB에 업로드
 + **service 배포** : `yarn deploy:prod` 또는 직접 EB에 업로드
 #### EFS
-영문버전을 로컬에서 띄었을때 데이터가 제대로 나오지 않는다. AWS EFS를 로컬에 직접 연결시켜야 데이터를 불러올 수 있다. 로컬이 아닌 서버(개발, 서비스)에서는 백엔드 개발자가 EB와 EFS를 연결시켜 두었으므로 별도로 다른 작업을 하지 않아도 데이터가 잘 나온다. 간단한 작업이라면 작업 후 개발서버에서 확인해도 되지만 보다 큰 작업이라면 로컬에서 확인하면서 작업해야하니 EFS를 연결하여 사용한다. EFS는 Profile(/movie, /people) 페이지에서 사용된다.
+영문버전을 로컬에서 띄었을때 데이터가 제대로 나오지 않는다. AWS EFS를 로컬에 직접 연결시켜야 데이터를 불러올 수 있다.
+
+로컬이 아닌 서버(개발, 서비스)에서는 백엔드 개발자가 EB와 EFS를 연결시켜 두었으므로 별도로 다른 작업을 하지 않아도 데이터가 잘 나온다. 간단한 작업이라면 작업 후 개발서버에서 확인해도 되지만 보다 큰 작업이라면 로컬에서 확인하면서 작업해야하니 EFS를 연결하여 사용한다.
+
+EFS는 Profile(/movie, /people) 페이지에서 사용된다.
 1. **로컬에서 EFS 사용하려면 macFuse와 sshfs 설치**  
 + `brew cask install osxfuse` or https://osxfuse.github.io
 + `brew install sshfs` or https://macappstore.org/sshfs/
@@ -72,7 +76,7 @@ sshfs {아이디}@52.53.155.131:/mnt/maimovie-efs-mount/ {로컬경로} -o Ident
 // 예시
 sshfs hyanghoon@52.53.155.131:/mnt/maimovie-efs-mount/ "/Users/mycelebs/Desktop/project/maimovie/maimovie-efs" -o IdentityFile=~/.ssh/maimovie-hyanghoon-us-west-1-221221.pem
 ```
-8. **언마운트**
+9. **언마운트**
 ```
 umount {아이디}@52.53.155.131:/mnt/maimovie-efs-mount/
 ```
