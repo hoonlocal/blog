@@ -28,8 +28,8 @@ maimovie 프로젝트를 혼자 하고 있는데 기존에 되어있던 환경, 
 + 레포지토리 : maimovie
 + 개발서버 : https://release.maimovie.com
 + 서비스서버 : https://maimovie.com
-+ dev 배포 : `yarn deploy:dev` 또는 직접 압축 업로드
-+ service 배포 : `yarn deploy:prod`
++ dev 배포 : `yarn deploy:dev` 또는 직접 업로드
++ service 배포 : `yarn deploy:prod` 또는 직접 업로드
 
 ### 마이무비 국문 - main, notice, provacy, terms
 + 개발환경 : Next.js(react)
