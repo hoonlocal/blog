@@ -47,16 +47,12 @@ EFS는 Profile(/movie, /people) 페이지에서 사용된다.
 ```
 // 예시
 -----BEGIN RSA PRIVATE KEY-----
-HJapazI4+Mnrj1Q/2aEp9HrvfP73x/9Xrx0mKKP6I326D9BBRHen849JxZmOXRcX
-rYeb73VKrsMkpbCJxb0edi3jjXf54z6ZNx0ySrARdI1ZRBTQ2RSpK7W4lXNXd7h9
-1ZSkZgwWv/s+UwbtWz1/j3WtXd+F6Jj3jzUvD5rMYjIu4KyoKKIFSt1j2W6Mk+Ur
-ksL/+vHX08+/WwxU/pdDIUBsHrWIBz8KhftsMwZCpAN5SyA+oPCIVqlfYBVhbslJ
-7w4wv2ECgYEA8tJ+z3RpqFFC5BRaXIaVMg2EGdTDf+uORQpipDE2lR24DDLeTYdc
-jW+gPoFy+OCQalL098b0IhIhlj7mVW4UhakrjO1dMjmcYwTvqxFYSwxIoIaApyIt
-800JTTcjsd4fmvYbgSTmHkPlm0AzC0K6DfdJAYiXHgrsJ7AZkHqzbPMCgYEAk+nh
-9zFgtMYyZnIG3titN2C/GW08YfPqcRgTl4wMmvHiUdSBQLIdHQXmRfpFRHgqJIqW
-JkfYUb/JJ0wW/Ufy9ShWESroCsR8B7Mn4vAVGU3R/oFY9gzET+kAfJAjy9AcBU4E
-gKzFcYP0dFaw76O4FC6woqkeImLCFNjkLqKyW0kCgYBMS7dsl7dbG61Y3MxHpkHa
+DFBDFbdkfnbkdbdDFBdkn5gn43kn4gker4654645klfndlflknhfgfgGGFGflkdn
+jfljbDFGDFGDFGDTT65654645645EDB654654/dfbDBGTYYf5635665456dfdFgg
+DFBDFbdkfnbkdbdDFBdkn5gn43kn4gker4654645klfndlflknhfgfgGGFGflkdn
+jfljbDFGDFGDFGDTT65654645645EDB654654/dfbDBGTYYf5635665456dfdFgg
+DFBDFbdkfnbkdbdDFBdkn5gn43kn4gker4654645klfndlflknhfgfgGGFGflkdn
+jfljbDFGDFGDFGDTT65654645645EDB654654/dfbDBGTYYf5635665456dfdFgg
 -----END RSA PRIVATE KEY-----
 ```
 4. **먼저 위 펨키는 내비두고 터미널에서 ~/.ssh/config 파일에 들어가서 아래와 같이 작성 후 저장**
