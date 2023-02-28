@@ -45,7 +45,7 @@ maimovie 프로젝트를 혼자 하고 있는데 기존에 되어있던 환경, 
 + 배포타입 : ECS(배포자동화)
 + 레포지토리 : maimovie-ko
 + 개발서버 : https://release.ko.maimovie.com/movie/20094415
-+ 실서버 : https://ko.maimovie.com/movie/20094415
++ 서비스서버 : https://ko.maimovie.com/movie/20094415
 + dev 배포 : develop 브랜치에 push시 dev 배포
 + service 배포 : main 브랜치에 push 후 release note 작성 시 배포
 
