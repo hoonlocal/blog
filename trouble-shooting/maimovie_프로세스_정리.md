@@ -4,12 +4,12 @@ maimovie 프로젝트를 혼자 하고 있는데 기존에 되어있던 환경, 
 <br>
 
 ## Problem
-+ 마이무비 프로젝트는 **총 3개의 레포지토리**에서 관리되고 있음
++ **마이무비 프로젝트**는 **총 3개의 레포지토리**에서 관리되고 있음
   - 마이무비 영문 1개(**maimovie**)
   - 마이무비 국문 2개(**maimovie-monorepo**, **maimovie-ko**)
 + 마이무비 국문버전을 **모노레포** 방식으로 점진적으로 전환(**nuxt.js** > **next.js**)하고 있어 레포지토리가 2개
-+ 마이무비 국문 중 main, notice, privacy, terms 페이지만 **next.js**(maimovie-monorepo), 나머지 페이지는 **nuxt.js**(maimovie-ko)
-+ 현재 프로세스에서는 수정요청이 들어오면 영문, 국문(2개) 각각 수정하고, 따로 배포해야함
++ 마이무비 국문 중 **main**, **notice**, **privacy**, **terms** 페이지만 **next.js**(maimovie-monorepo), 나머지 페이지는 **nuxt.js**(maimovie-ko)
++ 현재 **프로세스**에서는 수정요청이 들어오면 영문, 국문(2개) **각각 수정**하고, **따로 배포**해야함
 + 배포는 영문버전 `AWS EB`, 국문버전 `AWS ECS`
 + 영문버전 **EB**에 들어가보면 애플리케이션 환경이 많은데 그 중 2개의 환경에서만 관리되고 있음
   - `maimovie-release-env` : 개발서버
