@@ -110,7 +110,7 @@ isDev = false // prod
   - 압축하기 전 프로젝트 폴더 내에서 숨김파일 보기 설정
   - 프로젝트의 최상위 폴더(maimovie)를 제외한 안의 내용물만 드래그해서 압축
   - 압축한 파일은 EB에 직접 업로드 함(개발서버는 maimovie-release-env, 서비스서버는 maimovie-prod-env)
-  - 혹시 배포가 안되면 [Max - Zip 파일에서 __MACOSX 제거](https://asecurity.dev/entry/Mac-Zip-%ED%8C%8C%EC%9D%BC%EC%97%90%EC%84%9C-MACOSX-DSStore-%EC%A0%9C%EA%B1%B0) 참고
+  - 혹시 맥에서 배포가 안되면 [__MACOSX 제거](https://asecurity.dev/entry/Mac-Zip-%ED%8C%8C%EC%9D%BC%EC%97%90%EC%84%9C-MACOSX-DSStore-%EC%A0%9C%EA%B1%B0) 참고
 + **기존 EB에 배포된 서비스가 갑자기 동작하지 않는 경우**
   - 로그 확인해보면 npm install 시에 git:// 프로토콜 오류로 배포가 정상적으로 되지 않을때 해결방법
   - package-lock.json 파일을 생성하고 git:// -> https:// 로 수정해서 배포하면 됨
