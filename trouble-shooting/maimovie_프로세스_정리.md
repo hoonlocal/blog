@@ -140,7 +140,7 @@ build 이후에 압축하여 배포 (.nuxt 폴더 등 히든파일 및 폴더 �
 + **개발환경** : Nuxt.js(vue)
 + **배포타입** : ECS(배포자동화)
 + **데이터** : API
-+ **포지토리** : maimovie-ko
++ **리포지토리** : maimovie-ko
 + **개발서버** : https://release.ko.maimovie.com/movie/20094415 ("정이" 프로필 예시)
 + **서비스서버** : https://ko.maimovie.com/movie/20094415 ("정이" 프로필 예시)
 + **dev 배포** : develop 브랜치에 push시 dev 배포
