@@ -4,10 +4,10 @@ maimovie 프로젝트를 혼자 맡고 있는데 기존에 되어있던 환경, 
 <br>
 
 ## Problem
-+ **마이무비 프로젝트**는 **총 3개의 레포지토리**에서 관리되고 있음
++ **마이무비 프로젝트**는 **총 3개의 리포지토리**에서 관리되고 있음
   - 마이무비 영문 1개(`maimovie`)
   - 마이무비 국문 2개(`monorepo-maimovie`, `maimovie-ko`)
-+ 국문버전을 **모노레포** 방식으로 점진적으로 전환(**nuxt.js** > **next.js**)하고 있어 레포지토리가 2개
++ 국문버전을 **모노레포** 방식으로 점진적으로 전환(**nuxt.js** > **next.js**)하고 있어 리포지토리가 2개
 + 국문 중 **main**, **notice**, **privacy**, **terms** 페이지만 **Next.js**(monorepo-maimovie), 나머지 페이지는 **Nuxt.js**(maimovie-ko)
 + 국문(**Nuxt.js**) 소스코드를 **로컬**에서 띄우면 나오는 **첫페이지**는 **에러** 나는게 정상(메인페이지는 **Next.js** 페이지에 있으므로 여기선 **movie/20094415**와 같이 특정 프로필을 붙여 접속)
 + 현재 **프로세스**에서는 수정요청이 들어오면 영문, 국문(2개) **각각 수정**하고, **따로 배포**해야함
@@ -28,7 +28,7 @@ maimovie 프로젝트를 혼자 맡고 있는데 기존에 되어있던 환경, 
 + **개발환경** : Nuxt.js(vue)
 + **배포타입** : EB(maimovie-release-env, maimovie-prod-env)
 + **데이터** : EFS
-+ **레포지토리** : maimovie
++ **리포지토리** : maimovie
 + **개발서버** : https://release.maimovie.com
 + **서비스서버** : https://maimovie.com
 + **dev 배포** : `yarn deploy:dev` 또는 직접 EB에 업로드
@@ -130,7 +130,7 @@ build 이후에 압축하여 배포 (.nuxt 폴더 등 히든파일 및 폴더 �
 + **개발환경** : Next.js(react)
 + **배포타입** : ECS(배포자동화)
 + **데이터** : API
-+ **레포지토리** : monorepo-maimovie(apps/maimovie_kr)
++ **리포지토리** : monorepo-maimovie(apps/maimovie_kr)
 + **개발서버** : https://release.ko.maimovie.com
 + **서비스서버** : https://ko.maimovie.com
 + **dev 배포** : develop 브랜치에 push시 dev 배포
@@ -140,7 +140,7 @@ build 이후에 압축하여 배포 (.nuxt 폴더 등 히든파일 및 폴더 �
 + **개발환경** : Nuxt.js(vue)
 + **배포타입** : ECS(배포자동화)
 + **데이터** : API
-+ **레포지토리** : maimovie-ko
++ **포지토리** : maimovie-ko
 + **개발서버** : https://release.ko.maimovie.com/movie/20094415 ("정이" 프로필 예시)
 + **서비스서버** : https://ko.maimovie.com/movie/20094415 ("정이" 프로필 예시)
 + **dev 배포** : develop 브랜치에 push시 dev 배포
