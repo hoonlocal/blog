@@ -54,8 +54,9 @@ this command with --force, or --legacy-peer-deps
     1. Vuex 스토어에서 템플릿 옵션을 사용하는 대신 렌더링 기능을 사용하여 구성 요소의 HTML을 생성할 수 있다. 이렇게 하면 "./" 오류가 발생하지 않고 구성 요소가 제대로 렌더링될 수 있다.
     2. 또 다른 해결책은 Vuex 스토어를 별도의 Vue 파일로 옮기는 것이다. 이렇게 하면 "./" 오류가 발생하지 않고 템플릿 옵션을 사용할 수 있다.
     3. 하나 더 간단한 해결책은 Vuex가 설치된 module package.json에서 ./를 ./*로 변경해주어도 된다.
+
+a.
 ```javascript
-// a
 import { mapState } from 'vuex'
 
 export default {
@@ -67,8 +68,8 @@ export default {
   }
 }
 ```
+b.
 ```javascript
-// b
 // store.js
 import Vue from 'vue'
 import Vuex from 'vuex'
@@ -113,8 +114,8 @@ export default new Vuex.Store({
   }
 </script>
 ```
+c.
 ```json
-// c
 "exports": {
   ".": {
     "module": "./dist/vuex.esm.js",
