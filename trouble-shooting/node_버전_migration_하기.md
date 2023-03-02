@@ -49,6 +49,80 @@ this command with --force, or --legacy-peer-deps
 <br>
 
 ## What I Learn
++ 버전때문인지 Vuex를 사용할 때 "./"가 Vue 템플릿 루트로 허용되지 않는다는 오류 메시지가 나타남
+  - 이 오류는 Vuex가 템플릿 옵션을 처리하는 방식의 문제로 인해 발생한다.
+    1. Vuex 스토어에서 템플릿 옵션을 사용하는 대신 렌더링 기능을 사용하여 구성 요소의 HTML을 생성할 수 있다. 이렇게 하면 "./" 오류가 발생하지 않고 구성 요소가 제대로 렌더링될 수 있다.
+    2. 또 다른 해결책은 Vuex 스토어를 별도의 Vue 파일로 옮기는 것이다. 이렇게 하면 "./" 오류가 발생하지 않고 템플릿 옵션을 사용할 수 있다.
+    3. 하나 더 간단한 해결책은 Vuex가 설치된 module package.json에서 ./를 ./*로 변경해주어도 된다.
+```javascript
+// a
+import { mapState } from 'vuex'
+
+export default {
+  computed: {
+    ...mapState(['count'])
+  },
+  render(h) {
+    return h('div', `Count: ${this.count}`)
+  }
+}
+```
+```javascript
+// b
+// store.js
+import Vue from 'vue'
+import Vuex from 'vuex'
+
+Vue.use(Vuex)
+
+export default new Vuex.Store({
+  state: {
+    count: 0
+  },
+  mutations: {
+    increment(state) {
+      state.count++
+    }
+  },
+  actions: {
+    increment(context) {
+      context.commit('increment')
+    }
+  },
+  getters: {
+    count: state => state.count
+  }
+})
+
+// component.vue
+<template>
+  <div>
+    Count: {{ count }}
+  </div>
+</template>
+
+<script>
+  import store from './store'
+
+  export default {
+    computed: {
+      count() {
+        return store.getters.count
+      }
+    }
+  }
+</script>
+```
+```json
+// c
+"exports": {
+  ".": {
+    "module": "./dist/vuex.esm.js",
+    "require": "./dist/vuex.common.js",
+    "import": "./dist/vuex.mjs"
+  },
+  "./*": "./*"
+},
+```
 + node-sass와 sass-loader에 대한 개념 및 옵션들에 대해 부가적으로 학습
-+ 다음에 migration 하게 되면 sass-loader와 webpack의 버전을 맞추는 식으로도 해결할 수 있을 것 같음
-+ 이 외에 자잘한 경고 ex) vuex package 모듈 ./ > ./* 등 해결
++ sass-loader와 webpack의 버전을 맞추는 식으로도 해결할 수 있는 인사이트를 얻게 됨
