@@ -1,5 +1,5 @@
 ## Issue
-특정 프로젝트의 리포지토리를 옮긴 후 테스트한 첫 배포에 에러가 발생하였다.
+특정 프로젝트의 리포지토리를 옮긴 후 테스트한 첫 배포에 AWS 인증 에러가 발생하였다.
 
 ![](https://velog.velcdn.com/images/hoonlocal/post/f12fea39-0c19-48ef-97ca-20cdce494763/image.png)
 
