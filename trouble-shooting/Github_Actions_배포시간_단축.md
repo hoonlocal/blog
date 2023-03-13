@@ -12,7 +12,7 @@
 ## Solution
 1. 워크플로우에서 **배포시간**을 **단축**할 수 있는 방법을 구글링
 2. 아래와 같이 **작업 안정성 확인 비활성화**(wait-for-service-stability: false)
-```bash
+```yml
 - name: Deploy Amazon ECS task definition
         uses: aws-actions/amazon-ecs-deploy-task-definition@de0132cf8cdedb79975c6d42b77eb7ea193cf28e
         with:
