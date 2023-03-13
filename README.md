@@ -6,6 +6,7 @@
 
 <br>
 
++ [AWS region 인증 에러](https://github.com/hoonlocal/blog/blob/main/trouble-shooting/AWS_region_%EC%9D%B8%EC%A6%9D_%EC%97%90%EB%9F%AC.md)
 + [maimovie 프로세스 정리](https://github.com/hoonlocal/TIL/blob/main/trouble-shooting/maimovie_%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4_%EC%A0%95%EB%A6%AC.md)
 + [node 버전 migration 하기](https://github.com/hoonlocal/TIL/blob/main/trouble-shooting/node_%EB%B2%84%EC%A0%84_migration_%ED%95%98%EA%B8%B0.md)
 + [meta태그 ogimage 적용하기](https://github.com/hoonlocal/TIL/blob/main/trouble-shooting/meta%ED%83%9C%EA%B7%B8_ogimage_%EC%A0%81%EC%9A%A9%ED%95%98%EA%B8%B0.md)
